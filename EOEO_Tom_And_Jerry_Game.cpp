@@ -24,12 +24,12 @@ int brute_force(int TS) {
 	return result;
 }
 
-int efficient(int TS) {
-	int answer = 0;
+long long efficient(long long TS) {
+	long long answer = 0;
 	if ((TS % 2) == 1)
 		answer =  TS / 2;
 	else {
-		while ((TS / 2) % 2 != 1) {
+		while ((TS) % 2 != 1) {
 			TS = TS / 2;
 		}
 		answer = TS / 2;
@@ -40,14 +40,14 @@ int efficient(int TS) {
 int main() {
 	int testcases = 0;
 	std::cin >> testcases;
-	std::srand(std::time(nullptr));
+	//std::srand(std::time(nullptr));
 	while (testcases--) {
-		int TS = 0;
-		//std::cin >> TS;
-		TS = std::rand() % 100;
-		int result_bf = brute_force(TS);		
-		int result_eff = efficient(TS);
-		assert(result_bf == result_eff);
-		std::cout << result_bf << std::endl;
+		long long TS = 0;
+		std::cin >> TS;
+		//TS = std::rand() % 100;
+		//int result_bf = brute_force(TS);		
+		long long result_eff = efficient(TS);
+		//assert(result_bf == result_eff);
+		std::cout << result_eff << std::endl;
 	}
 }
